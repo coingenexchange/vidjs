@@ -1,0 +1,494 @@
+#page.theater-mode {
+  background: #fff;
+}
+
+.vjs-paused .vjs-big-play-button,
+.vjs-paused.vjs-has-started .vjs-big-play-button {
+  display: block;
+}
+
+/*
+  Player Skin Designer for Video.js
+  http://videojs.com
+
+  To customize the player skin edit 
+  the CSS below. Click "details" 
+  below to add comments or questions.
+  This file uses some SCSS. Learn more  
+  at http://sass-lang.com/guide)
+
+  This designer can be linked to at:
+  https://codepen.io/heff/pen/EarCt/left/?editors=010
+*/
+
+.video-js {
+  /* The base font size controls the size of everything, not just text.
+       All dimensions use em-based sizes so that the scale along with the font size.
+       Try increasing it to 15px and see what happens. */
+  font-size: 10px;
+  /* The main font color changes the ICON COLORS as well as the text */
+  color: #ffffff;
+}
+
+/* The "Big Play Button" is the play button that shows before the video plays.
+     To center it set the align values to center and middle. The typical location
+     of the button is the center, but there is trend towards moving it to a corner
+     where it gets out of the way of valuable content in the poster image.*/
+
+/* The default color of control backgrounds is mostly black but with a little
+     bit of blue so it can still be seen on all-black video frames, which are common. */
+
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+  background-color: #1E2B3C;
+  background-color: #1e2b3cbd;
+}
+
+/* Slider - used for Volume bar and Progress bar */
+
+.video-js .vjs-slider {
+  height: 1px;
+}
+
+/* The slider bar color is used for the progress bar and the volume bar
+     (the first two can be removed after a fix that's coming) */
+
+.video-js .vjs-play-progress {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+18,87e0fd+28,07eded+97 */
+  background: #87e0fd;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, color-stop(18%, #87e0fd), color-stop(28%, #87e0fd), color-stop(97%, #07eded));
+  background: linear-gradient(to right, #87e0fd 18%, #87e0fd 28%, #07eded 97%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#07eded', GradientType=1);
+  /* IE6-9 */
+  height: 8px !important;
+  top: -4px;
+}
+
+/* The main progress bar also has a bar that shows how much has been loaded. */
+
+/* The load progress bar also has internal divs that represent
+     smaller disconnected loaded time ranges */
+
+.video-js .vjs-load-progress div {
+  /* For IE8 we'll lighten the color */
+  background: white;
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba(115, 133, 159, 0.75);
+}
+
+.video-js .vjs-play-progress:before {
+  content: "";
+  width: 5px;
+  font-size: inherit;
+  height: 8px;
+  -webkit-transform: skew(33deg);
+  transform: skew(33deg);
+  background: #ffffff;
+  top: 0;
+  right: -2px;
+  z-index: 0;
+}
+
+.video-js .vjs-progress-control:hover .vjs-progress-holder {
+  font-size: unset !important;
+}
+
+.video-js .vjs-progress-control:hover .vjs-time-tooltip,
+.video-js .vjs-progress-control:hover .vjs-progress-holder:focus .vjs-time-tooltip {
+  font-size: 0.9em;
+}
+
+.vjs-volume-bar.vjs-slider-horizontal {
+  height: 0.3em !important;
+}
+
+div#vid {
+  -webkit-transition: all 1.5s ease 0s;
+  transition: all 1.5s ease 0s;
+  position: relative;
+}
+
+.img-block {
+  display: block;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+.vjs-overlay-left-middle {
+  right: calc(50% + 20%);
+  top: 50%;
+}
+
+.vjs-overlay-right-middle {
+  left: calc(50% + 20%);
+  top: 50%;
+}
+
+.vjs-overlay-sy-bottom-left {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100% !important;
+}
+
+.sy-content {
+  float: left;
+  position: relative;
+  width: inherit;
+}
+
+.sy-block {
+  color: #0099ff;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  width: 100px;
+}
+
+.right-skew {
+  position: relative;
+}
+
+.right-skew:before {
+  z-index: 5;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -13px;
+  display: block;
+  width: 21px;
+  -webkit-transform: skew(10deg);
+  transform: skew(20deg);
+}
+
+/* Standard background */
+
+.sy-block.right-skew {
+  background: rgb(255, 255, 255);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(96%, rgba(210, 210, 210, 1)));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(210, 210, 210, 1) 96%);
+}
+
+.sy-block.right-skew:before {
+  background: rgb(210, 210, 210);
+}
+
+/* Active background */
+
+.sy-block.right-skew.active {
+  background: rgb(255, 255, 255);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 1)), color-stop(96%, rgba(210, 210, 210, 1)));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(210, 210, 210, 1) 96%);
+}
+
+.sy-block.right-skew.active:before {
+  background: rgb(210, 210, 210);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  z-index: 99999;
+}
+
+.sy-video-logo {
+  max-width: 160px;
+  position: relative;
+}
+
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.row {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.slick-dots {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  left: 0;
+  display: block;
+  width: auto;
+  height: 27px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: unset;
+  bottom: 0;
+}
+
+.slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 10px;
+  line-height: 20px;
+  position: absolute;
+  top: -3px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  opacity: 0.65;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: white;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sy-videos-slider {
+  position: absolute;
+  top: -130px;
+  width: inherit;
+  margin-bottom: 0;
+  background: #f5f5f5;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.sy-videos-slides .slide {
+  width: 100px;
+}
+
+.sy-videos-slides {
+  margin-bottom: 0;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #3e3e3e;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-responsive-16by9 {
+  display: block;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.vjs-control-bar {
+  -webkit-transition: visibility 0.5s, opacity 0.25s;
+  transition: visibility 0.5s, opacity 0.25s;
+}
+
+.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
+  -webkit-transition: visibility 0.5s, opacity 0.25s;
+  transition: visibility 0.5s, opacity 0.25s;
+}
+
+.video-js .vjs-control-bar {
+  -webkit-transition: visibility 0.5s, opacity 0.25s;
+  transition: visibility 0.5s, opacity 0.25s;
+}
+
+.vjs-paused.vjs-user-inactive .vjs-control-bar {
+  display: none;
+  -webkit-transition: visibility 0.5s, opacity 0.25s;
+  transition: visibility 0.5s, opacity 0.25s;
+}
+
+.video-js .vjs-big-play-button {
+  font-size: 3em;
+  line-height: 3em;
+  height: 3em;
+  width: 3em;
+  margin-top: -1.5em !important;
+  border: 0.06666em solid #fff;
+  background-color: unset;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 3em;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.video-js:hover .vjs-big-play-button,
+.video-js .vjs-big-play-button:focus {
+  border-color: #fff;
+  background-color: unset;
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -ms-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
+}
+
+.seek-forward:before {
+  content: '\f051';
+  font-family: 'FontAwesome';
+}
+
+.seek-forward {
+  font-size: 3em;
+  line-height: 3em;
+  height: 3em;
+  width: 3em;
+  margin-top: -1.5em !important;
+  border: 0.06666em solid #fff;
+  background-color: unset;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 3em;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.seek-back:before {
+  content: '\f048';
+  font-family: 'FontAwesome';
+}
+
+.seek-back {
+  font-size: 3em;
+  line-height: 3em;
+  height: 3em;
+  width: 3em;
+  margin-top: -1.5em !important;
+  border: 0.06666em solid #fff;
+  background-color: unset;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 3em;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.three-card {
+  position: relative;
+}
+
+.video-poster {
+  position: relative;
+}
+
+.video-poster button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.full-width-card {
+display: none;
+}
+
+.vjs-theater-container-button span:before {
+  content: '\f326';
+  font-family: 'FontAwesome';
+  color: #FFFFFF;
+}
+
+.vjs-theater-container-button.theater-toggled span:before {
+  content: '\f320';
+  font-family: 'FontAwesome';
+  color: #FFFFFF;
+}

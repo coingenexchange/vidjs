@@ -1,0 +1,14 @@
+{
+  "generator-videojs-plugin": {
+    "scope": "",
+    "name": "superyachts",
+    "description": "Seek buttons on the video to go back and forward",
+    "author": "Zayn Zafar",
+    "license": "mit",
+    "sass": false,
+    "ie8": true,
+    "docs": true,
+    "lang": false,
+    "husky": "lint"
+  }
+}
